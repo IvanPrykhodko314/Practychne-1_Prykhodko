@@ -2,9 +2,12 @@ def search(listSearch):
     searchfor = input("Введіть елемент для пошуку: ")
     isfound = False
     
-    for item in listSearch:
-        if str(searchfor) == str(item):
-            isfound = True
+    for i in listSearch:
+        for j in i:
+            if str(searchfor) == str(j):
+                isfound = True
+                break
+        if isfound:
             break
     
     if isfound:
@@ -12,5 +15,5 @@ def search(listSearch):
     else:
         print(f"Елемент '{searchfor}' не знайдено")
 
-myList = ["apple", "banana", "cherry", 1, 2, 3, 4]
+myList = [[1, 2, 3], ["Львів", "Київ", "Одеса"], [4, 5, 6]]
 search(myList)
